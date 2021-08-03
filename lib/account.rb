@@ -1,6 +1,5 @@
 class Account
-  
-  def initialize(balance = 0 )
+  def initialize(balance = 0)
     @balance = balance
   end
 
@@ -9,10 +8,10 @@ class Account
   end
 
   def deposit(amount)
-    @balance = @balance + amount
+    @balance += amount
   end
 
   def withdraw(amount)
-    @balance = @balance - amount
- end
+    @balance -= amount
+  end
 end
