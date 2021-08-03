@@ -57,3 +57,8 @@ I want to print a statement
 ## How to use the program
 
  -  **WIP* *
+
+ - Terminal
+ - IRB
+ - require './lib/account.rb'
+ - account = Account.new
