@@ -13,6 +13,13 @@ describe Account do
     expect(account.get_balance).to eq(10)
   end
 
+  it 'allows to withdraw money the account' do
+   account = Account.new(0)
+   account.deposit(10)
+   account.withdraw(7)
+   expect(account.get_balance).to eq(3)
+ end
+
 
   
 end
