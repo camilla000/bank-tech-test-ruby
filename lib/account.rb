@@ -14,4 +14,8 @@ class Account
   def withdraw(amount)
     @balance -= amount
   end
+
+  def print_balance
+    "Your current balance is #{@balance}"
+  end
 end
