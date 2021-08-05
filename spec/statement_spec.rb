@@ -1,20 +1,20 @@
+# frozen_string_literal: true
+
+require 'simplecov'
+SimpleCov.start
 require 'statement'
-require 'date'
 
-
-describe Statement do 
+describe Statement do
+  let(:head) { "date || credit || debit || balance\n" }
   before(:each) do
-    @statement = Statement.new([Date.today], [0], [0], [0])
+    @account = Account.new
+  end
+  before(:all) do
+    @transactions = []
   end
 
-  it 'print statement table title' do 
-    expect(@statement.print_title).to eq("date || deposit || withdraw || balance")
+  it 'saves account deposit transactions' do
+    @account.deposit(100)
+    expect(@account.transactions).to eq([["#{Date.today}||     ||100||100"]])
   end
-
-  it "can print the statement" do
-    statement = "date || deposit || withdraw || balance
-    || 0 || 0 || 0 "
-    expect { @statement.print_statement }.to output(statement).to_stdout
-  end
-
 end
