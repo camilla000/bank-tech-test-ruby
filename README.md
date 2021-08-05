@@ -56,9 +56,25 @@ I want to print a statement
 
 ## How to use the program
 
- -  **WIP* *
+### Set up:
 
- - Terminal
- - IRB
- - require './lib/account.rb'
- - account = Account.new
+```
+bundle install
+```
+
+### How to run program:
+
+In IRB:
+```irb
+require './lib/account.rb'
+account = Account.new
+account.deposit(2000)
+account.withdraw(1000)
+account.balance
+```
+
+### How to run tests:
+
+```
+rspec
+```
