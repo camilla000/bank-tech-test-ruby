@@ -1,38 +1,46 @@
-require_relative 'statement'
+# frozen_string_literal: true
+
+require 'simplecov'
+SimpleCov.start
 require 'date'
+require './lib/statement'
 
 class Account
+  attr_reader :transactions, :balance
 
-  attr_reader :balance, :date, :balance_array, :deposit_array, :withdraw_array
+  INITIAL = 0
 
-
-
-  def initialize(balance = 0)
-    @balance = balance
-    @date = []
-    @balance_array = []
-    @deposit_array = []
-    @withdraw_array = []
-
+  def initialize
+    @balance = INITIAL
+    @transactions = []
   end
 
-  def get_balance
-    @balance
+  def date
+    Date.today
+  end
+
+  def print_title
+    'date || credit(£) || debit(£) || balance(£)'
+  end
+
+  def balance
+    "Your current balance is £#{@balance}"
   end
 
   def deposit(amount)
-    @deposit_array.push(amount)
-    @withdraw_array.push(0)
-    @balance_array.push(@balance += amount)
-    @date.push(Date.today)
+    @balance += amount
+    puts print_title
+    @transactions << ["#{date}||     ||#{amount}||#{@balance}"]
+    "Your current balance is £#{@balance}"
   end
 
   def withdraw(amount)
-    @deposit_array.push(0)
-    @withdraw_array.push(amount)
-    @balance_array.push(@balance -= amount)
-    @date.push(Date.today)
-  end
+    puts print_title
+    raise "You don't have enough funds" unless amount < @balance
 
-  
+    puts print_title
+    @transactions << ["#{date}||#{amount}||     ||#{@balance}"]
+
+    @balance -= amount
+  end
 end
