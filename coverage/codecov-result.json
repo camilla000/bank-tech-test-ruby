@@ -1,0 +1,13 @@
+spec/spec_helper.rb
+spec/account_spec.rb
+spec/statement_spec.rb
+lib/account.rb
+lib/statement.rb
+Gemfile
+Gemfile.lock
+coverage/index.html
+coverage/codecov-result.json
+coverage/assets/0.12.3/application.css
+coverage/assets/0.12.3/application.js
+<<<<<< network
+{"coverage":{"lib/account.rb":[null,null,null,1,1,1,1,null,1,1,null,1,null,1,7,7,null,null,1,6,null,null,1,7,null,null,1,3,null,null,1,4,4,4,4,null,null,1,2,2,null,1,1,null,1,null,null],"lib/statement.rb":[null,null,null,1,null,1,1,null,0,0,0,0,0,null,null,null],"spec/account_spec.rb":[null,null,null,1,1,1,null,1,1,6,null,1,1,null,null,1,1,null,null,1,1,1,1,null,null,null,1,1,1,1,1,null,null,1,2,null,null,null,1,1,1,null,null,null,1,1,1,1,null,null,null],"spec/statement_spec.rb":[null,null,null,1,1,1,null,1,1,1,1,null,1,1,null,null,1,1,1,null,null]}}
